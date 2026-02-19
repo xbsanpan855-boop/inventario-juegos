@@ -1,0 +1,17 @@
+/* src/index.css */
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #020617;
+  min-height: 100vh;
+}
