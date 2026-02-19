@@ -1,4 +1,3 @@
-import { mockData } from "./mockData";
 import { GameList } from "./components/GameList";
 import { useState } from "react";
 import { GameForm } from "./components/GameForm";
@@ -42,6 +41,7 @@ function App() {
       const savedItem = { ...newItem, id: docRef.id };
       setGame([...game, savedItem]);
     } catch (error) {
+      console.error("Error guardando:", error)
       alert("Error al guardar");
     }
   };

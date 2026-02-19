@@ -3,6 +3,7 @@ import { GameCard } from "./GameCard";
 
 interface GameLIstProps {
     items: Game[];
+    onDelete: (id: string) => void;
 }
 
 export function GameList({ items, onDelete }: GameLIstProps) {
