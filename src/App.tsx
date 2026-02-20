@@ -34,14 +34,21 @@ function App() {
 
   const handleAddGame = async (newItem: Game) => {
     try {
-      const { id, ...dataToSave } = newItem;
+      //En lugar de extraer el id, creo el objeto para guardar directamente
+      const dataToSave = {
+        titulo: newItem.titulo,
+        horasJugadas: newItem.horasJugadas,
+        plataforma: newItem.plataforma,
+        genero: newItem.genero,
+        estado: newItem.estado
+      };
 
       const docRef = await addDoc(collection(db, "juegos"), dataToSave);
 
       const savedItem = { ...newItem, id: docRef.id };
       setGame([...game, savedItem]);
     } catch (error) {
-      console.error("Error guardando:", error)
+      console.error("Error guardando:", error);
       alert("Error al guardar");
     }
   };

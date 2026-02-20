@@ -1,18 +1,18 @@
 import type { Game } from "../types";
 import { GameCard } from "./GameCard";
 
-interface GameLIstProps {
+interface GameListProps {
     items: Game[];
-    onDelete: (id: string) => void;
+    onDelete: (id: string) => void; 
 }
 
-export function GameList({ items, onDelete }: GameLIstProps) {
-    if(items.length === 0) {
+export function GameList({ items, onDelete }: GameListProps) {
+    if (items.length === 0) {
         return (
             <div style={{ textAlign: 'center', padding: '50px', color: '#64748b' }}>
                 <p>📭 Tu biblioteca está vacía.</p>
             </div>
-        )
+        );
     }
 
     return (
@@ -23,7 +23,7 @@ export function GameList({ items, onDelete }: GameLIstProps) {
             padding: '20px 0'
         }}>
             {items.map((item) => (
-                <GameCard key={item.id} data={item} onDelete={onDelete}/>
+                <GameCard key={item.id} data={item} onDelete={onDelete} />
             ))}
         </div>
     );
